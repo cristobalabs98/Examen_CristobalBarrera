@@ -15,12 +15,25 @@
     <link rel="apple-touch-icon" href="/icon.png">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= csrf_meta_tags %>
   </head>
 
   <body>
+<header>
+  <div class="container">
+  <h1 class="text-primary">Bootstrap está funcionando correctamente 🎉</h1>
+  <button class="btn btn-success">Botón de prueba</button>
+</div>
+      <nav>
+        <% if user_signed_in? %>
+          <p>Bienvenido, <%= current_user.email %>!</p>
+        <% else %>
+          <%= link_to "Iniciar sesión", new_user_session_path %>
+          <%= link_to "Registrarse", new_user_registration_path %>
+        <% end %>
+      </nav>
+    </header>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
