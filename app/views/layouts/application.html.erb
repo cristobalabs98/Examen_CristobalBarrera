@@ -20,19 +20,37 @@
 
   <body>
 <header>
-  <div class="container">
-  <h1 class="text-primary">Bootstrap está funcionando correctamente 🎉</h1>
-  <button class="btn btn-success">Botón de prueba</button>
-</div>
-      <nav>
-        <% if user_signed_in? %>
-          <p>Bienvenido, <%= current_user.email %>!</p>
-        <% else %>
-          <%= link_to "Iniciar sesión", new_user_session_path %>
-          <%= link_to "Registrarse", new_user_registration_path %>
-        <% end %>
-      </nav>
-    </header>
+  <nav class="navbar navbar-expand-lg" style="background: linear-gradient(90deg, #4CAF50, #81C784);">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white fw-bold" href="#">Empresa_Reciclaje</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Bienvenido, <%= current_user.email %></a>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Perfil", edit_user_registration_path, class: "nav-link text-white" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "nav-link text-white", data: { turbo_method: "delete" } %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Iniciar sesión", new_user_session_path, class: "nav-link text-white" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Registrarse", new_user_registration_path, class: "nav-link text-white" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
 
     <%= yield %>
   </body>
