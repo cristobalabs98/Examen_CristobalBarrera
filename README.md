@@ -10,4 +10,6 @@ generamos rails generate devise User (este crea migracion, modelo User y ruta) h
 en la base de datos creamos dos operadores (email: 'operador1@gmail.com', password: '123456') y por ultimo generamos el 4to paso para tener devise "rails generate devise:views"
 hicimos tambien la carpeta home de la app view donde tenemos nuestro index al cual no podemos ingresar si no hacemos log in "segundo commit"
 
-3-
+3-colocamos bootstrap y realizamos el nav para poder tener un orden en el acceso de los usuarios
+
+4- borrado en cascada 

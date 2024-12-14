@@ -23,4 +23,6 @@ class User < ApplicationRecord
   def operador?
     role == "operador"
   end
+
+  has_many :materials, dependent: :destroy
 end
