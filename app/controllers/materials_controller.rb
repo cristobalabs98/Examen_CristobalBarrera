@@ -3,6 +3,7 @@ class MaterialsController < ApplicationController
 
   # GET /materials or /materials.json
   def index
+    # Agrupar materiales por nombre y descripción
     @materials = Material.all
   end
 

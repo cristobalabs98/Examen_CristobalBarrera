@@ -9,4 +9,11 @@ class CreateMaterials < ActiveRecord::Migration[7.2]
       t.timestamps
     end
   end
+  def up
+    Material.where(date: nil).update_all(date: Date.today)
+  end
+
+  def down
+    # No se necesita revertir
+  end
 end
