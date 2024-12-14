@@ -13,3 +13,37 @@ hicimos tambien la carpeta home de la app view donde tenemos nuestro index al cu
 3-colocamos bootstrap y realizamos el nav para poder tener un orden en el acceso de los usuarios
 
 4- borrado en cascada 
+
+5-<h1>Listado de Usuarios por Rango de Fechas</h1>
+
+  <div>
+    <label>Fecha de Inicio:</label>
+    <%= date_field_tag :start_date, params[:start_date] %>
+  </div>
+  <div>
+    <label>Fecha de Fin:</label>
+    <%= date_field_tag :end_date, params[:end_date] %>
+  </div>
+  <%= submit_tag "Filtrar", class: "btn btn-primary" %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Rol</th>
+      <th>Fecha de Creación</th>
+      <th>Última Actualización</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.role %></td>
+        <td><%= user.created_at.strftime("%d/%m/%Y %H:%M") %></td>
+        <td><%= user.updated_at.strftime("%d/%m/%Y %H:%M") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
