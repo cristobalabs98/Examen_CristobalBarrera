@@ -63,3 +63,5 @@ gem "bootstrap", "~> 5.3"
 gem "popper_js", "~> 2.11"
 
 gem "sassc-rails", "~> 2.1"
+
+gem "net-pop", "~> 0.1.2"
