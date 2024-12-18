@@ -33,7 +33,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_14_100430) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "role"
+    t.string "role", default: "reciclador"
     t.string "phone_number"
     t.string "name"
     t.string "address"
